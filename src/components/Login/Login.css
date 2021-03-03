@@ -1,0 +1,27 @@
+.login {
+  max-width: 396px;
+  margin: 0 auto;
+}
+
+.login_control {
+  padding: 16px 0 70px;
+}
+
+.login_input {
+  margin: 0 0 20px;
+}
+
+.login__form-btn {
+  margin-top: 192px;
+}
+
+@media screen and (max-width: 320px) {
+  .login {
+    max-width: 260px;
+  }
+
+  .login_control {
+    padding: 157px 0 30px;
+    justify-items: center;
+  }
+}

@@ -1,0 +1,27 @@
+.register {
+  max-width: 396px;
+  margin: 0 auto;
+}
+
+.register_input {
+  margin: 0 0 20px;
+}
+
+.register_form-btn {
+  margin-top: 69px;
+}
+
+.register_control {
+  padding: 16px 0 70px;
+}
+
+@media screen and (max-width: 320px) {
+  .register {
+    max-width: 260px;
+  }
+
+  .register_control {
+    padding: 157px 0 30px;
+    justify-items: center;
+  }
+}

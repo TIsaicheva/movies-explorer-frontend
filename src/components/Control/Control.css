@@ -1,0 +1,40 @@
+.control {
+  max-width: 396px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  grid-column-gap: 6px;
+  justify-content: center;
+}
+
+.control__text {
+  margin: 0;
+  color: #a0a0a0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  justify-self: end;
+}
+
+.control__link {
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-indent: 6px;
+}
+
+.control__link:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 320px) {
+  .control__text {
+    font-size: 12px;
+  }
+
+  .control__link {
+    font-size: 12px;
+  }
+}
