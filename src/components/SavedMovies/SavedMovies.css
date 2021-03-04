@@ -9,6 +9,7 @@
   column-gap: 30px;
   grid-row-gap: 47px;
   padding-bottom: 242px;
+  justify-content: center;
 }
 
 .savedMovies__moviesCard {
@@ -53,12 +54,12 @@
   }
 
   .savedMovies__moviesCard-poster {
-    width: 100%;
+    width: 99%;
     border-radius: 6px;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
   .savedMovies__moviesCardList {
     max-width: 300px;
     grid-template-columns: repeat(auto-fit, 300px);  
