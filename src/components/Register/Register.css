@@ -8,7 +8,15 @@
 }
 
 .register_form-btn {
+  max-width: 99%;
   margin-top: 69px;
+  background-color: #000000;
+  color: white;
+  border-radius: 3px;
+  margin-top: 192px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 .register_control {

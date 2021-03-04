@@ -143,7 +143,7 @@ function Movies() {
           }
           cardListModifier="мovies__moviesCardList"
         />
-        <Button text="Ещё" btnClass="мovies__btn" />
+        <Button text="Ещё" btnClass="мovies_btn" />
       </section>
     </>
   );

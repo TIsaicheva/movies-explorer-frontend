@@ -39,12 +39,11 @@ function MoviesCard(props) {
           <div className={`${likeIconClassName} ${moviesLikeModifier}`}></div>
         </div>
         <div className={`moviesCard__image ${moviesImageModifier}`}>
-          <video
+          <img
+            alt={posterName}
+            src={link}
             className={`moviesCard__poster ${moviesPosterModifier}`}
-            poster={link}
-            src="kino.mp4"
-            type="video/mp4"
-          ></video>
+          />
           <button className={deleteIconClassName}></button>
           <button
             className={`moviesCard__save ${!isaSved && moviesSaveModifier}`}

@@ -1,5 +1,5 @@
 .toogle {
-  transform: translate(85%, 0);
+  transform: translate(88%, 0);
   position: relative;
   width: 50%;
 }
@@ -22,6 +22,7 @@
   position: relative;
   line-height: 1.3;
   font-size: 14px;
+  font-weight: 400;
 }
 
 .toogle__label:after {
@@ -49,8 +50,25 @@
   width: 20px;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 775px) {
   .toogle {
-    transform: translate(50%, 0);  
+    transform: translate(80%, 0);
+  }
+}
+
+@media screen and (max-width: 595px) {
+  .toogle {
+    transform: translate(64%, 0);
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .toogle {
+    transform: translate(49%, 0);
+  }
+
+  .toogle__label {
+    font-size: 11px;
+    line-height: 1.8;  
   }
 }

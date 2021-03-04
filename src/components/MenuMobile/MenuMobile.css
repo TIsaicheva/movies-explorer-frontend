@@ -85,16 +85,27 @@
     cursor: pointer;
   }
 
-  #btn {
+  #icon-btn {
     display: none;
   }
 
-  #btn:checked ~ .menu-mobile_opened {
+  #icon-btn:checked ~ .menu-mobile_opened {
     display: none;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 426px) {
+  .menu-mobile__container {
+    width: 395px;
+    padding: 144px 50px 48px;
+  }
+
+  .menu-mobile__account { 
+    padding: 0 17px 0 90px;
+  }
+}
+
+@media screen and (max-width: 376px) {
   .menu-mobile__container {
     width: 320px;
     padding: 144px 10px 48px;

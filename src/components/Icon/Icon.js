@@ -4,9 +4,9 @@ import "./Icon.css";
 function Icon({ iconClass }) {
   return (
     <>
-      <input type="checkbox" id="btn" />
-      <label className="icon" htmlFor="btn">
-        <div className={iconClass}></div>
+      <input type="checkbox" id="icon-btn" />
+      <label className="icon" htmlFor="icon-btn">
+        <span className={iconClass}></span>
       </label>
     </>
   );

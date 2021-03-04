@@ -8,9 +8,14 @@
   border-bottom: 1px solid black;
 }
 
-@media screen and (max-width: 320px) {
-  .title {
-    font-size: 18px;
+@media screen and (max-width: 426px) {
+  .title { 
     order: -2;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .title {
+    font-size: 18px;  
   }
 }

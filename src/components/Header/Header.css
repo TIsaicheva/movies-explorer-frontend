@@ -56,7 +56,7 @@
   right: 0;
 }
 
-#btn {
+#icon-btn {
   display: none;
 }
 
@@ -72,7 +72,7 @@
     right: 30px;
   }
 
-  #btn {
+  #icon-btn {
     display: none;
   }
 
@@ -80,7 +80,7 @@
     display: none;
   }
 
-  #btn:checked ~ .menu-mobile_opened {
+  #icon-btn:checked ~ .menu-mobile_opened {
     display: block;
   }
 
@@ -89,7 +89,13 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 426px) {
+  .header__content {   
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 376px) {
   .header__content {
     max-width: 320px;
     padding: 0 14px;

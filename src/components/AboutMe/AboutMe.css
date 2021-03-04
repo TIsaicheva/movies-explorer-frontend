@@ -74,10 +74,11 @@
   border: 1px solid #e8e8e8;
 }
 
-@media screen and (max-width: 775px) {
+@media screen and (max-width: 776px) {
   .aboutMe__container {
     max-width: 668px;
     padding: 90px 50px;
+    justify-content: space-around;
   }
 
   .aboutMe__content {
@@ -108,7 +109,19 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 426px) {
+  .aboutMe__container {  
+    padding: 70px 30px;
+  }
+
+  .aboutMe__photo {
+    max-width: 299px;
+    margin: 66px auto 0;
+    order: -1;
+  }
+}
+
+@media screen and (max-width: 376px) {
   .aboutMe__container {
     max-width: 292px;
     padding: 70px 18px;
@@ -129,9 +142,8 @@
   }
 
   .aboutMe__photo {
-    max-width: 284px;
-    height: 352px;
-    order: -1;
+    max-width: 266px;
+    height: 352px;  
     box-sizing: border-box;
   }
 }

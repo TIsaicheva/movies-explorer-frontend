@@ -1,14 +1,8 @@
 .btn {
   height: 45px;
-  outline: none;
-  background-color: #000000;
-  border-radius: 3px;
-  color: white;
+  outline: none; 
   text-align: center;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.2;
+  cursor: pointer; 
 }
 
 .btn:hover {
