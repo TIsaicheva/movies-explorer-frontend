@@ -1,10 +1,11 @@
 import React from "react";
-import './NavTab.css';
+import Button from "../Button/Button";
+import "./NavTab.css";
 
 function NavTab() {
   return (
     <>
-      <a href="#aboutProject" className="nav nav__btn">Узнать больше</a>
+      <Button text="Узнать больше" btnClass="nav__btn" btnType="" />
     </>
   );
 }
