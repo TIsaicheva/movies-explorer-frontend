@@ -1,0 +1,140 @@
+.aboutProject {
+  width: 100%;
+  background-color: white;
+}
+
+.aboutProject__container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 110px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutProject__content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  grid-column-gap: 40px;
+  padding: 70px 0 110px;
+}
+
+.aboutProject__article_title {
+  font-size: 20px;
+}
+
+.aboutProject__article_subtitle {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.aboutProject__diagram {
+  max-width: 1140px;
+  padding: 0 2px 0;
+  display: flex;
+  text-align: center;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.2;  
+}
+
+.aboutProject__diagram-column-back {
+  width: 228px;
+}
+
+.aboutProject__diagram-column-front {
+  width: 912px;
+}
+
+.aboutProject__diagram-title {
+  margin: 0;
+  height: 36px;
+  font-weight: 400;
+  padding: 9px 0;
+  box-sizing: border-box;
+}
+
+.aboutProject__diagram-title-back {
+  background-color: black;
+  color: white;
+}
+
+.aboutProject__diagram-title-front {
+  background-color: #f2f2f2;
+  color: black;
+}
+
+.aboutProject__diagram-subtitle {
+  margin: 0;
+  padding-top: 14px;
+  color: #a0a0a0;
+}
+
+@media screen and (max-width: 776px) {
+  .aboutProject__container {
+    max-width: 668px;
+    padding: 90px 50px;
+  }
+
+  .aboutProject__content {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+    grid-column-gap: 30px;
+  }
+
+  .aboutProject__diagram-column-back {
+    width: 154px;
+  }
+
+  .aboutProject__diagram-column-front {
+    width: 514px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .aboutProject__container {
+    padding: 70px 30px;
+  }
+
+  .aboutProject__content {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, max-content);
+    grid-row-gap: 56px;
+    padding: 60px 0 60px;
+  }
+
+  .aboutProject__diagram {
+    font-size: 11px;
+  }
+
+  .aboutProject__diagram-column-back {
+    width: 65px;
+  }
+
+  .aboutProject__diagram-column-front {
+    width: 244px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .aboutProject__container {
+    max-width: 284px;
+    padding: 70px 18px;
+  }
+
+  .aboutProject__article_title {
+    font-size: 18px;
+    padding: 0 0 16px;
+  }
+
+  .aboutProject__article_subtitle {
+    font-size: 11px;
+  }  
+
+  .aboutProject__diagram-column-back {
+    width: 100px;
+  }
+
+  .aboutProject__diagram-column-front {
+    width: 184px;
+  }
+}

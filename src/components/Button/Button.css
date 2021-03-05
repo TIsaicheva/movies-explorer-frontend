@@ -1,0 +1,16 @@
+.btn {
+  height: 45px;
+  outline: none; 
+  text-align: center;
+  cursor: pointer; 
+}
+
+.btn:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 320px) {
+  .btn {
+    max-width: 260px;
+  }
+}

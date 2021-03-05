@@ -1,0 +1,113 @@
+.header {
+  width: 100%;
+  height: 74px;
+  background-color: #ffffff;
+}
+
+.header_main {
+  background-color: #f3c1f8;
+}
+
+.header_main-menu {
+  justify-content: flex-end;
+}
+
+.header__content {
+  position: relative;
+  max-width: 1140px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_auth-content {
+  height: 217px;
+}
+
+.header__auth {
+  max-width: 396px;
+  margin: 0 auto;
+  padding: 70px 3px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header__auth-title {
+  margin: 0;
+  padding: 40px 0 0;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.header__menu-btn {
+  position: absolute;
+  visibility: hidden;
+  background: url(../../images/burger_menu.svg) no-repeat center;
+  width: 44px;
+  height: 44px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+}
+
+#icon-btn {
+  display: none;
+}
+
+@media screen and (max-width: 775px) {
+  .header__content {
+    max-width: 768px;
+    padding: 0 30px;
+  }
+
+  .header__menu-btn {
+    visibility: visible;
+    top: 15px;
+    right: 30px;
+  }
+
+  #icon-btn {
+    display: none;
+  }
+
+  .menu-mobile_opened {
+    display: none;
+  }
+
+  #icon-btn:checked ~ .menu-mobile_opened {
+    display: block;
+  }
+
+  .header__menu_invisible {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .header__content {   
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .header__content {
+    max-width: 320px;
+    padding: 0 14px;
+  }
+
+  .header__auth {
+    max-width: 260px;
+    padding: 56px 0 80px;
+    align-items: center;
+  }
+
+  .header__menu-btn {  
+    right: 14px;
+  }
+}

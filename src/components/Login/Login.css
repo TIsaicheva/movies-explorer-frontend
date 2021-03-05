@@ -1,0 +1,34 @@
+.login {
+  max-width: 396px;
+  margin: 0 auto;
+}
+
+.login_control {
+  padding: 16px 0 70px;
+}
+
+.login_input {
+  margin: 0 0 20px;
+}
+
+.login__form-btn {
+  max-width: 99%;
+  background-color: #000000;
+  color: white;
+  border-radius: 3px;
+  margin-top: 192px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+@media screen and (max-width: 320px) {
+  .login {
+    max-width: 260px;
+  }
+
+  .login_control {
+    padding: 157px 0 30px;
+    justify-items: center;
+  }
+}

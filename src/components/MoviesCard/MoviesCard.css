@@ -1,0 +1,103 @@
+.moviesCard {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f9f9f9;
+  padding: 6px 6px 6px 22px;
+  box-sizing: border-box;
+}
+
+.moviesCard__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.moviesCard__name {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+  padding: 16px 0 7px;
+}
+
+.moviesCard__duration {
+  margin: 0;
+  color: #a0a0a0;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.2;
+  padding: 3px 4px;
+  align-self: flex-start;
+}
+
+.moviesCard__like-icon {
+  width: 14px;
+  height: 12px;
+  background: url(../../images/like_icon.svg) no-repeat;
+  background-position: center;
+  padding: 15px 0 0;
+  margin: 30px 0 0;
+}
+
+.moviesCard__like-icon_active {
+  background: url(../../images/like_icon_active.svg) no-repeat;
+}
+
+.moviesCard__image {
+  position: relative;
+}
+
+.moviesCard__delete {
+  visibility: hidden;
+  position: absolute;
+  width: 21px;
+  height: 21px;
+  background: url(../../images/del_Icon.svg);
+  top: 14px;
+  right: 14px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.moviesCard__delete_visible {
+  visibility: visible;
+}
+
+.moviesCard__save {
+  visibility: hidden;
+  position: absolute;
+  width: 72px;
+  height: 21px;
+  background: url(../../images/save_btn.svg);
+  top: 14px;
+  right: 14px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.moviesCard__saved {
+  visibility: hidden;
+  position: absolute;
+  width: 21px;
+  height: 21px;
+  background: url(../../images/saved_icon.svg);
+  top: 14px;
+  right: 14px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 775px) {
+  .moviesCard__duration {
+    margin: 0;
+    color: #a0a0a0;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.2;
+    padding: 3px 4px;
+    align-self: center;
+  }
+}
