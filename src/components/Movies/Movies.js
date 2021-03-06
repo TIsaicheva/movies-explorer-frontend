@@ -12,7 +12,7 @@ import aboutGermany from "../../images/about_germany.svg";
 import "./Movies.css";
 import Button from "../Button/Button";
 
-function Movies() {
+function Movies({ movies }) {
   return (
     <>
       <section className="мovies">

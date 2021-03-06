@@ -9,9 +9,26 @@ import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import PageNotFound from "../PageNotFound/PageNotFound";
 import { Route, Switch } from "react-router-dom";
+import moviesApi from "../../utils/MoviesApi";
 import "./App.css";
 
 function App() {
+  const [movies, setMovies] = React.useState([]);
+
+  // получение фильмов по ключеврму слову
+  function getMovies() {
+    moviesApi.movies()
+      .then((data) => {
+        console.log(data);
+        setMovies(movies);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  getMovies();
+
   return (
     <>
       <Header />
@@ -20,7 +37,7 @@ function App() {
           <Main />
         </Route>
         <Route path="/movies">
-          <Movies />
+          <Movies movies={movies} />
         </Route>
         <Route path="/saved-movies">
           <SavedMovies />
