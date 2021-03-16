@@ -68,7 +68,6 @@ class MainApi {
       headers: {
         'Accept': 'application/json, */*',
         "Content-Type": "application/json",
-        'Access-Control-Allow-Origin': '*'
      },
       body: JSON.stringify({ email, password }),
     }).then(this._handleResponse);
@@ -80,7 +79,6 @@ class MainApi {
       headers: {
         'Accept': 'application/json',
         "Content-Type": "application/json",
-        'Access-Control-Allow-Origin': '*'
      },
       body: JSON.stringify({ email, password, name }),
     }).then(this._handleResponse);
