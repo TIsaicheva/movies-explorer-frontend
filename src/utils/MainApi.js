@@ -1,9 +1,3 @@
-let headers = new Headers();
-headers.append("GET", "POST", "OPTIONS");
-headers.append("Content-Type", "application/json");
-headers.append("Accept", "application/json");
-headers.append("Origin", "https://tisaichdiplom.students.nomoredomains.icu");
-
 class MainApi {
   constructor(config) {
     this._url = config.baseUrl;
@@ -65,7 +59,10 @@ class MainApi {
   login(email, password) {
     return fetch(`${this._url}/signin`, {
       method: "POST",
-      headers: headers,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
       credentials: "include",
       body: JSON.stringify({ email, password }),
     }).then(this._handleResponse);
@@ -74,7 +71,10 @@ class MainApi {
   register(email, password, name) {
     return fetch(`${this._url}/signup`, {
       method: "POST",
-      headers: headers,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
       credentials: "include",
       body: JSON.stringify({ email, password, name }),
     }).then(this._handleResponse);
