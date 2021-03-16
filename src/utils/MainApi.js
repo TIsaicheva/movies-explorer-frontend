@@ -1,8 +1,8 @@
-let headers = new Headers();
-headers.append("GET", "POST", "OPTIONS");
-headers.append("Content-Type", "application/json");
-headers.append("Accept", "application/json");
-headers.append("Origin", "https://tisaichdiplom.students.nomoredomains.icu" ); //"http://localhost:3001"
+// let headers = new Headers();
+// headers.append("GET", "POST", "OPTIONS");
+// headers.append("Content-Type", "application/json");
+// headers.append("Accept", "application/json");
+// headers.append("Origin", "https://tisaichdiplom.students.nomoredomains.icu" ); //"http://localhost:3001"
 
 class MainApi {
   constructor(config) {
@@ -63,26 +63,32 @@ class MainApi {
   }
 
   login(email, password) {
-    return fetch(`${this._url}/signin`, {  
+    return fetch(`${this._url}/signin`, {
       method: "POST",
-      headers: headers,
       credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
       body: JSON.stringify({ email, password }),
     }).then(this._handleResponse);
   }
 
   register(email, password, name) {
-    return fetch(`${this._url}/signup`, { 
+    return fetch(`${this._url}/signup`, {
       method: "POST",
-      headers: headers,
       credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
       body: JSON.stringify({ email, password, name }),
     }).then(this._handleResponse);
   }
 }
 
 const mainApi = new MainApi({
-  baseUrl: "https://api.tisaichdiplom.students.nomoredomains.icu", //"http://localhost:3000" 
+  baseUrl: "https://api.tisaichdiplom.students.nomoredomains.icu", //"http://localhost:3000"
 });
 
 export default mainApi;
