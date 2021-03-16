@@ -65,10 +65,9 @@ class MainApi {
   login(email, password) {
     return fetch(`${this._url}/signin`, {
       method: "POST",
-      credentials: "include",
       headers: {
-        "Content-Type": "application/json",
         Accept: "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ email, password }),
     }).then(this._handleResponse);
@@ -76,11 +75,10 @@ class MainApi {
 
   register(email, password, name) {
     return fetch(`${this._url}/signup`, {
-      method: "POST",
-      credentials: "include",
+      method: "POST",  
       headers: {
-        "Content-Type": "application/json",
         Accept: "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ email, password, name }),
     }).then(this._handleResponse);
