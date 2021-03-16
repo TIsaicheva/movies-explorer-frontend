@@ -63,8 +63,7 @@ class MainApi {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-      },
-      credentials: "include",
+      },  
       body: JSON.stringify({ email, password }),
     }).then(this._handleResponse);
   }
@@ -77,7 +76,6 @@ class MainApi {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      credentials: "include",
       body: JSON.stringify({ email, password, name }),
     }).then(this._handleResponse);
   }
