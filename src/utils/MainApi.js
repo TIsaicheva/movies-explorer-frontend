@@ -1,8 +1,8 @@
-let headers = new Headers();
-headers.append("GET", "POST", "OPTIONS");
-headers.append("Content-Type", "application/json");
-headers.append("Accept", "application/json");
-headers.append("Origin", "https://tisaichdiplom.students.nomoredomains.icu" ); //"http://localhost:3001"
+// let headers = new Headers();
+// headers.append("GET", "POST", "OPTIONS");
+// headers.append("Content-Type", "application/json");
+// headers.append("Accept", "application/json");
+// headers.append("Origin", "https://tisaichdiplom.students.nomoredomains.icu" ); //"http://localhost:3001"
 
 class MainApi {
   constructor(config) {
@@ -65,7 +65,11 @@ class MainApi {
   login(email, password) {
     return fetch(`${this._url}/signin`, {
       method: "POST",
-      headers: headers,
+      headers: {
+        'Accept': 'application/json, */*',
+        "Content-Type": "application/json",
+        'Access-Control-Allow-Origin': '*'
+     },
       body: JSON.stringify({ email, password }),
     }).then(this._handleResponse);
   }
@@ -73,7 +77,11 @@ class MainApi {
   register(email, password, name) {
     return fetch(`${this._url}/signup`, {
       method: "POST",  
-      headers: headers,
+      headers: {
+        'Accept': 'application/json',
+        "Content-Type": "application/json",
+        'Access-Control-Allow-Origin': '*'
+     },
       body: JSON.stringify({ email, password, name }),
     }).then(this._handleResponse);
   }
