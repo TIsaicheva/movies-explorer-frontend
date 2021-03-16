@@ -65,7 +65,8 @@ class MainApi {
   login(email, password) {
     return fetch(`${this._url}/signin`, {  
       method: "POST",
-      headers: headers,  
+      headers: headers,
+      credentials: "include",
       body: JSON.stringify({ email, password }),
     }).then(this._handleResponse);
   }
@@ -74,6 +75,7 @@ class MainApi {
     return fetch(`${this._url}/signup`, { 
       method: "POST",
       headers: headers,
+      credentials: "include",
       body: JSON.stringify({ email, password, name }),
     }).then(this._handleResponse);
   }
