@@ -1,24 +1,20 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import "./Control.css";
 
-function Control({
-  textBtn,
+function Control({  
   text,
   textLink,
-  link,
-  btnClass,
-  btnType,
   linkClass,
   textClassModifier,
   controlClassModifier,
+  onClick,
 }) {
   return (
     <section className={`control ${controlClassModifier}`}>    
       <p className={`control__text ${textClassModifier}`}>{text}</p>
-      <NavLink className={linkClass || "control__link"} to={link}>
+      <a href="/" className={linkClass || "control__link"} onClick={onClick}>
         {textLink}
-      </NavLink>
+      </a>
     </section>
   );
 }

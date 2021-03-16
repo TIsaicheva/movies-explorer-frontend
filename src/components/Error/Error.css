@@ -1,0 +1,15 @@
+.error {
+  display: none;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #ff4062;
+  text-align: center;
+  padding: 20px 0;
+  position: absolute;
+  transform: translate(30%, 300%);
+}
+
+.error_visible {
+  display: block;
+}

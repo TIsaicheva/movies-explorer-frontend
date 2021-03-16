@@ -17,3 +17,23 @@ code {
 #root {
   max-width: 100vw;
 }
+
+/* section, 
+button, 
+a, 
+p, 
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+menu, 
+nav,
+ul,
+li,
+header, 
+footer,
+input,
+label, img, div {
+  outline: 1px solid red;
+} */

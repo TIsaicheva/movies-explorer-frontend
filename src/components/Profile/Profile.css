@@ -16,6 +16,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .profile__field-name {
@@ -89,6 +90,10 @@
 
 .profile__link:hover {
   opacity: 0.6;
+}
+
+.profile_error {
+  transform: translate(40%, 210%);
 }
 
 @media screen and (max-width: 320px) {

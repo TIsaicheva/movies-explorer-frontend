@@ -6,6 +6,9 @@ function Input({
   labelFor,
   labelModifier,
   id,
+  name,
+  value,
+  onChange,
   placeholder,
   type,
   minLength,
@@ -21,6 +24,9 @@ function Input({
         className={`input-field ${inputModifier}`}
         type={type}
         id={id}
+        name={name}
+        onChange={onChange}
+        value={value}
         placeholder={placeholder}
         minLength={minLength}
         maxLength={maxLength}

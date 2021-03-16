@@ -7,6 +7,10 @@
   margin: 0 0 20px;
 }
 
+.register_input:invalid {
+  margin: 0;
+}
+
 .register_form-btn {
   max-width: 99%;
   margin-top: 69px;
@@ -21,6 +25,10 @@
 
 .register_control {
   padding: 16px 0 70px;
+}
+
+.register_error {
+  transform: translate(15%, 510%);
 }
 
 @media screen and (max-width: 320px) {

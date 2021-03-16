@@ -1,69 +1,70 @@
 import React from "react";
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
-import MoviesCard from "../MoviesCard/MoviesCard";
-import movieThirtyThree from "../../images/33_word_big.svg";
-import kinoalmanah from "../../images/kinoalmanah_big.svg";
-import freedom from "../../images/Bancksy_big.svg";
+import Preloader from "../Preloader/Preloader";
 import "./SavedMovies.css";
 
-function SavedMovies() {
+function SavedMovies({
+  savedMovies,
+  count,
+  onSearchMovies,
+  onInputChange,
+  onToggleChange,
+  onButtonClick,
+  onDeleteClick,
+  moviesNotFound,
+  isLoading,
+}) {
+  const moviesModifiers = {
+    moviesSaveModifier: "",
+    moviesSavedModifier: "",
+    moviesCardModifier: "savedMovies__moviesCard",
+    moviesContentModifier: "savedMovies__moviesCard-content",
+    moviesImageModifier: "savedMovies__moviesCard-image",
+    moviesPosterModifier: "savedMovies__moviesCard-poster",
+    moviesLikeModifier: "savedMovies__moviesCard-like-icon",
+    moviesNameModifier: "savedMovies__moviesCard-name",
+    moviesDurationModifier: "savedMovies__moviesCard-duration",
+  };
+
+  function handleSearch(searchString) {
+    onSearchMovies(searchString);
+  }
+
+  function handleToggleChange(e) {
+    const eTarget = e.target.checked 
+    onToggleChange(eTarget, true);
+  }
+
+  function handleClick() {
+    onButtonClick();    
+  }
+
   return (
     <>
       <section className="savedMovies">
-        <SearchForm />
-        <MoviesCardList
-          children={
-            <>
-              <MoviesCard
-                name="33 слова о дизайне"
-                duration="1ч 42м"
-                posterName="Постер 33 слова о дизайне"
-                link={movieThirtyThree}
-                active={true}
-                owner={false}
-                moviesCardModifier="savedMovies__moviesCard"
-                moviesImageModifier="savedMovies__moviesCard-image"
-                moviesLikeModifier="savedMovies__moviesCard-like-icon"
-                moviesContentModifier="savedMovies__moviesCard-content"
-                moviesNameModifier="savedMovies__moviesCard-name"
-                moviesDurationModifier="savedMovies__moviesCard-duration"
-                moviesPosterModifier="savedMovies__moviesCard-poster"
-              />
-              <MoviesCard
-                name="Киноальманах «100 лет дизайна»"
-                duration="1ч 42м"
-                posterName="Постер «100 лет дизайна»"
-                link={kinoalmanah}
-                active={true}
-                owner={true}
-                moviesCardModifier="savedMovies__moviesCard"
-                moviesImageModifier="savedMovies__moviesCard-image"
-                moviesLikeModifier="savedMovies__moviesCard-like-icon"
-                moviesContentModifier="savedMovies__moviesCard-content"
-                moviesNameModifier="savedMovies__moviesCard-name"
-                moviesDurationModifier="savedMovies__moviesCard-duration"
-                moviesPosterModifier="savedMovies__moviesCard-poster"
-              />
-              <MoviesCard
-                name="Бег это свобода"
-                duration="1ч 42м"
-                posterName="Постер Бег это свобода"
-                link={freedom}
-                active={true}
-                owner={false}
-                moviesCardModifier="savedMovies__moviesCard"
-                moviesImageModifier="savedMovies__moviesCard-image"
-                moviesLikeModifier="savedMovies__moviesCard-like-icon"
-                moviesContentModifier="savedMovies__moviesCard-content"
-                moviesNameModifier="savedMovies__moviesCard-name"
-                moviesDurationModifier="savedMovies__moviesCard-duration"
-                moviesPosterModifier="savedMovies__moviesCard-poster"
-              />
-            </>
-          }
-          cardListModifier="savedMovies__moviesCardList"
+        <SearchForm        
+          onSearch={handleSearch}
+          onInputChange={onInputChange}
+          onToggleChange={handleToggleChange}
+          moviesNotFound={moviesNotFound}
         />
+        {isLoading && <Preloader/>}
+        {savedMovies.length > 0 && (
+          <MoviesCardList
+            movieCards={savedMovies}
+            cardListModifier="savedMovies__moviesCardList"
+            moviesModifiers={moviesModifiers}
+            onDeleteClick={onDeleteClick}
+            isSaved={true}
+          />
+        )}
+        <button
+          className={`мovies_btn ${count <= savedMovies.length ? "мovies_btn_disabled" : ""}`}
+          onClick={handleClick}
+        >
+          Все
+        </button>   
       </section>
     </>
   );

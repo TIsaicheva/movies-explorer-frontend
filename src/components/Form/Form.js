@@ -1,12 +1,14 @@
 import React from "react";
 import Button from "../Button/Button";
+import Error from "../Error/Error";
 import "./Form.css";
 
-function Form({ children, formClassModifier, textBtn, btnClass, btnType }) {
+function Form({ children, formClassModifier, textBtn, btnClass, btnType, onSubmit, isValid, error, errorModifier }) {
   return (
-      <form className={`form ${formClassModifier}`}>
+      <form className={`form ${formClassModifier}`} onSubmit={onSubmit} noValidate>
         {children}
-        <Button text={textBtn} btnClass={btnClass} btnType={btnType} />
+        <Error error={error} errorModifier={errorModifier} />
+        <Button text={textBtn} btnClass={`${btnClass} ${!isValid && "btn_disabled"}`} btnType={btnType} />
       </form>
     );
 }

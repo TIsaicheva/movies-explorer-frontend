@@ -3,9 +3,9 @@ class MoviesApi {
     this._url = config.url;
   }
 
-  movies() {
+  getMovies() {
     return fetch(this._url, {
-      method: "GET",
+      method: "GET"
     })
       .then((res) => {
         if (res.ok) {

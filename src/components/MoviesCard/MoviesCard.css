@@ -1,10 +1,15 @@
 .moviesCard {
   width: 100%;
+  height: 134px;
   display: flex;
   justify-content: space-between;
   background-color: #f9f9f9;
   padding: 6px 6px 6px 22px;
   box-sizing: border-box;
+}
+
+.moviesCard_hidden {
+  display: none;
 }
 
 .moviesCard__content {
@@ -13,6 +18,8 @@
 }
 
 .moviesCard__name {
+  max-width: 250px;
+  text-align: start;
   margin: 0;
   font-size: 18px;
   font-weight: 500;
@@ -35,16 +42,32 @@
   height: 12px;
   background: url(../../images/like_icon.svg) no-repeat;
   background-position: center;
-  padding: 15px 0 0;
-  margin: 30px 0 0;
+  padding: 30px 0 22px;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
 
 .moviesCard__like-icon_active {
-  background: url(../../images/like_icon_active.svg) no-repeat;
+  background: url(../../images/like_icon_active.svg) no-repeat center;
 }
 
 .moviesCard__image {
+  width: 220px;
+  height: 100%;
   position: relative;
+}
+
+.moviesCard__poster-link {
+  text-decoration: none;
+  color: #000;
+}
+
+.moviesCard__poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .moviesCard__delete {
@@ -64,25 +87,10 @@
   visibility: visible;
 }
 
-.moviesCard__save {
-  visibility: hidden;
-  position: absolute;
-  width: 72px;
-  height: 21px;
-  background: url(../../images/save_btn.svg);
-  top: 14px;
-  right: 14px;
-  outline: none;
-  border: none;
-  cursor: pointer;
-}
-
-.moviesCard__saved {
-  visibility: hidden;
-  position: absolute;
-  width: 21px;
-  height: 21px;
-  background: url(../../images/saved_icon.svg);
+.moviesCard__save-btn {
+  display: none;
+  position: absolute;  
+  height: 21px; 
   top: 14px;
   right: 14px;
   outline: none;
@@ -99,5 +107,17 @@
     line-height: 1.2;
     padding: 3px 4px;
     align-self: center;
+  }
+
+  .moviesCard__save-btn_keep {
+    display: block;  
+    width: 72px;  
+    background: url(../../images/save_btn.svg);  
+  }
+  
+  .moviesCard__save-btn_keeped {
+    display: block;
+    width: 21px; 
+    background: url(../../images/saved_icon.svg); 
   }
 }

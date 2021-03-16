@@ -18,7 +18,7 @@
 }
 
 .input-field:invalid:focus {
-  border: 2px dashed indianred;
+  border: 1px solid indianred;
   color: indianred;
 }
 

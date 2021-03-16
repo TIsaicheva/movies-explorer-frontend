@@ -11,6 +11,10 @@
   margin: 0 0 20px;
 }
 
+.login_input:invalid {
+  margin: 0;
+}
+
 .login__form-btn {
   max-width: 99%;
   background-color: #000000;
