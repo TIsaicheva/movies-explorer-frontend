@@ -4,9 +4,10 @@ import Input from "../Input/Input";
 import FormError from "../FormError/FormError";
 import Control from "../Control/Control";
 import { useFormValidation } from "../../hooks/useFormValidation";
+import Preloader from "../Preloader/Preloader";
 import "./Login.css";
 
-function Login({ onLogin, error }) {
+function Login({ onLogin, error, onLoad }) {
   const {
     values,
     errors,
@@ -17,6 +18,7 @@ function Login({ onLogin, error }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    resetForm();
     onLogin(values.email, values.pass);
   }
 
@@ -66,6 +68,7 @@ function Login({ onLogin, error }) {
         btnClass="login__form-btn"
         btnType="submit"
       />
+      {onLoad && <Preloader/>}
       <Control
         text="Ещё не зарегистрированы?"
         textLink="Регистрация"

@@ -3,11 +3,9 @@ import "./Button.css";
 
 function Button({ text, btnClass, btnType }) {
   return (
-    <>
-      <button className={`btn ${btnClass}`} type={btnType}>
-        {text}
-      </button>
-    </>
+    <button className={`btn ${btnClass}`} type={btnType}>
+      {text}
+    </button>
   );
 }
 

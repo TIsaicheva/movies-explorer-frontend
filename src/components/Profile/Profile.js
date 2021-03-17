@@ -5,9 +5,10 @@ import Input from "../Input/Input";
 import FormError from "../FormError/FormError";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { useFormValidation } from "../../hooks/useFormValidation";
+import Preloader from "../Preloader/Preloader";
 import "./Profile.css";
 
-function Profile({ onEdit, onClick, error }) {
+function Profile({ onEdit, onClick, error, onLoad }) {
   const {
     values,
     errors,
@@ -80,6 +81,7 @@ function Profile({ onEdit, onClick, error }) {
           btnClass="profile_form-btn"
           btnType="submit"
         />
+        {onLoad && <Preloader/>}
         <Control
           onClick={onClick}
           text=""

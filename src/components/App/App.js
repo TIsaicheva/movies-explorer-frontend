@@ -7,6 +7,7 @@ import Profile from "../Profile/Profile";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
+import InfoTooltip from "../InfoTooltip/InfoTooltip";
 import PageNotFound from "../PageNotFound/PageNotFound";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import { Route, Switch, useHistory } from "react-router-dom";
@@ -39,6 +40,7 @@ function App() {
   const [savedMovies, setSavedMovies] = React.useState([]);
   const [currentUser, setCurrentUser] = React.useState({});
   const [loggedIn, setLoggedIn] = React.useState(false);
+  const [isInfoTooltipOpen, setIsInfoTooltipOpen] = React.useState(false);
   const [error, setError] = React.useState({
     failedStatus: false,
     message: "",
@@ -207,7 +209,12 @@ function App() {
       });
   }
 
+  function handleClose() {
+    setIsInfoTooltipOpen(false);
+  }
+
   function onEdit(email, name) {
+    setIsLoading(true);
     mainApi
       .updateUserInfo(email, name)
       .then((updatedUserData) => {
@@ -216,16 +223,20 @@ function App() {
           failedStatus: false,
           message: "",
         });
+        setIsInfoTooltipOpen(true);
       })
       .catch((err) => {
         setError({
           failedStatus: true,
           message: "Неправильно заполнены поля.",
         });
+      }).finally(() => {  
+        setIsLoading(false);
       });
   }
 
   function onRegister(email, password, name) {
+    setIsLoading(true);
     mainApi
       .register(email, password, name)
       .then((user) => {
@@ -240,10 +251,13 @@ function App() {
           failedStatus: true,
           message: "Что-то пошло не так! Попробуйте ещё раз.",
         });
+      }).finally(() => {
+        setIsLoading(false);
       });
   }
 
   function onLogin(email, password) {
+    setIsLoading(true);
     mainApi
       .login(email, password)
       .then((data) => {
@@ -262,6 +276,8 @@ function App() {
           failedStatus: true,
           message: "Неправильные почта или пароль.",
         });
+      }).finally(() => {
+        setIsLoading(false);
       });
   }
 
@@ -283,18 +299,19 @@ function App() {
         })
         .catch((err) => console.log);
     }
-  }
+  }  
 
   React.useEffect(() => {
+    const path = document.location.pathname;
     checkToken();
     if (loggedIn) {
-      history.push("/movies");
+      history.push(path); 
     }
   }, [loggedIn, history]);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
-      <Header />
+      <Header loggedIn={loggedIn} />
       <Switch>
         <Route path="/" exact>
           <Main />
@@ -324,7 +341,7 @@ function App() {
           onDeleteClick={handleDeleteSavedMovie}
           onButtonClick={onShowAllSavedMovies}
           count={countSavedMovies}        
-          isLoading={isLoading}
+          onLoad={isLoading}
         />
         <ProtectedRoute
           path="/profile"
@@ -333,18 +350,20 @@ function App() {
           onEdit={onEdit}
           onClick={onSignOut}
           error={error}
+          onLoad={isLoading}
         />
         <Route path="/signin">
-          <Login onLogin={onLogin} error={error} />
+          <Login onLogin={onLogin} error={error} onLoad={isLoading} />
         </Route>
         <Route path="/signup">
-          <Register onRegister={onRegister} error={error} />
+          <Register onRegister={onRegister} error={error} onLoad={isLoading} />
         </Route>
         <Route path="*">
           <PageNotFound />
         </Route>
       </Switch>
       <Footer />
+      <InfoTooltip isOpen={isInfoTooltipOpen} onClose={handleClose} title="Профиль успешно сохранен!" />
     </CurrentUserContext.Provider>
   );
 }

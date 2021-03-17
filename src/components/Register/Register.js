@@ -4,9 +4,10 @@ import Control from "../Control/Control";
 import Input from "../Input/Input";
 import FormError from "../FormError/FormError";
 import { useFormValidation } from "../../hooks/useFormValidation";
+import Preloader from "../Preloader/Preloader";
 import "./Register.css";
 
-function Register({ onRegister, error }) {
+function Register({ onRegister, error, onLoad }) {
   const {
     values,
     errors,
@@ -17,12 +18,9 @@ function Register({ onRegister, error }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    resetForm();
     onRegister(values.email, values.pass, values.name);
   }
-
-  // React.useEffect(() => {
-  //   resetForm();
-  // }, [resetForm]);
 
   return (
     <section className="register">
@@ -88,6 +86,7 @@ function Register({ onRegister, error }) {
         btnClass="register_form-btn"
         btnType="submit"
       />
+      {onLoad && <Preloader/>}
       <Control
         text="Уже зарегистрированы?"
         textLink="Войти"

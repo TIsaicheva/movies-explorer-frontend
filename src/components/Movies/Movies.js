@@ -15,7 +15,7 @@ function Movies({
   onButtonClick,
   showMoreBtn,
   onMovieLike,
-  isLoading,
+  onLoad,
 }) {
   const moviesModifiers = {
     moviesSaveModifier: "moviesCard__save-btn_keep",
@@ -47,7 +47,7 @@ function Movies({
           onToggleChange={handleToggleChange}
           moviesNotFound={moviesNotFound}
         />
-        {isLoading && <Preloader/>}
+        {onLoad && <Preloader/>}
         {showMovies && (
           <MoviesCardList
             movieCards={movies}

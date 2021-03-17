@@ -13,7 +13,7 @@ function SavedMovies({
   onButtonClick,
   onDeleteClick,
   moviesNotFound,
-  isLoading,
+  onLoad,  
 }) {
   const moviesModifiers = {
     moviesSaveModifier: "",
@@ -25,7 +25,7 @@ function SavedMovies({
     moviesLikeModifier: "savedMovies__moviesCard-like-icon",
     moviesNameModifier: "savedMovies__moviesCard-name",
     moviesDurationModifier: "savedMovies__moviesCard-duration",
-  };
+  };  
 
   function handleSearch(searchString) {
     onSearchMovies(searchString);
@@ -49,7 +49,7 @@ function SavedMovies({
           onToggleChange={handleToggleChange}
           moviesNotFound={moviesNotFound}
         />
-        {isLoading && <Preloader/>}
+        {onLoad && <Preloader/>}
         {savedMovies.length > 0 && (
           <MoviesCardList
             movieCards={savedMovies}

@@ -2,7 +2,6 @@ import React from "react";
 import "./Toogle.css";
 
 function Toogle({ text, onToggleChange }) {
-  
 
   return (
     <div className="toogle">
