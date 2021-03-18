@@ -1,0 +1,13 @@
+.logo {
+  background: url(../../images/logo.svg) no-repeat center;
+  background-size: contain;
+  width: 37px;
+  height: 37px;
+}
+
+.logo:hover {
+  border: 1px solid #F2F2F2;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}

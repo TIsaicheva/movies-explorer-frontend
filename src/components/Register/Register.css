@@ -1,0 +1,43 @@
+.register {
+  max-width: 396px;
+  margin: 0 auto;
+}
+
+.register_input {
+  margin: 0 0 20px;
+}
+
+.register_input:invalid {
+  margin: 0;
+}
+
+.register_form-btn {
+  max-width: 99%;
+  margin-top: 69px;
+  background-color: #000000;
+  color: white;
+  border-radius: 3px;
+  margin-top: 192px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.register_control {
+  padding: 16px 0 70px;
+}
+
+.register_error {
+  transform: translate(15%, 510%);
+}
+
+@media screen and (max-width: 320px) {
+  .register {
+    max-width: 260px;
+  }
+
+  .register_control {
+    padding: 157px 0 30px;
+    justify-items: center;
+  }
+}

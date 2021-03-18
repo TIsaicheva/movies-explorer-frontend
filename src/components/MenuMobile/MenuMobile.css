@@ -1,0 +1,122 @@
+.menu-mobile_opened {
+  display: none;
+}
+
+.menu-mobile__container {
+  display: none;
+}
+
+@media screen and (max-width: 775px) {
+  .menu-mobile_opened {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    transition: visibility 0.5s, opacity 0.5s;
+  }
+
+  .menu-mobile__container {
+    width: 520px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    grid-template-rows: repeat(2, max-content);
+    grid-row-gap: 280px;
+    padding: 159px 90px 92px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .menu__link_mobile {
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  .menu__link_mobile:hover {
+    text-decoration: underline;
+  }
+
+  .menu-mobile__links {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, max-content);
+    grid-row-gap: 22px;
+    text-align: center;
+  }
+
+  .menu-mobile__account {
+    max-width: 100px;
+    position: relative;
+    font-weight: 500;
+    padding: 0 17px 0 120px;
+    font-size: 14px;
+  }
+
+  .menu-mobile__account:hover,
+  .menu-mobile__account:visited {
+    opacity: 0.6;
+  }
+
+  .menu-mobile__account-icon {
+    width: 26px;
+    height: 30px;
+    background: url(../../images/account_icon.svg) no-repeat;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .menu-mobile_btn {
+    position: absolute;
+    top: 23px;
+    right: 23px;
+    background: url(../../images/close_menu.svg) no-repeat center;
+    width: 22px;
+    height: 22px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  #icon-btn {
+    display: none;
+  }
+
+  #icon-btn:checked ~ .menu-mobile_opened {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .menu-mobile__container {
+    width: 395px;
+    padding: 144px 50px 48px;
+  }
+
+  .menu-mobile__account { 
+    padding: 0 17px 0 90px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .menu-mobile__container {
+    width: 320px;
+    padding: 144px 10px 48px;
+  }
+
+  .menu-mobile__account {
+    padding: 0 17px 0 93px;
+  }
+
+  .menu-mobile_btn {
+    top: 14px;
+    right: 14px;
+  }
+}
