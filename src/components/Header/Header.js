@@ -15,32 +15,36 @@ function Header({ loggedIn }) {
           <div className="header__content">
             <Logo />
             {loggedIn ? (
-              <Navigation
-                children={
-                  <>
-                    <div className="menu__movies-link_container">
-                      <NavLink
-                        to="/movies"
-                        className="menu__link menu__movie-link"
-                      >
-                        Фильмы
-                      </NavLink>
-                      <NavLink to="/saved-movies" className="menu__link">
-                        Сохранённые фильмы
-                      </NavLink>
-                    </div>
+              <>
+                <Icon iconClass="header__menu-btn" />
+                <MenuMobile isOpenedClass="menu-mobile_opened" />
+                <Navigation
+                  children={
+                    <>
+                      <div className="menu__movies-link_container">
+                        <NavLink
+                          to="/movies"
+                          className="menu__link menu__movie-link"
+                        >
+                          Фильмы
+                        </NavLink>
+                        <NavLink to="/saved-movies" className="menu__link">
+                          Сохранённые фильмы
+                        </NavLink>
+                      </div>
 
-                    <NavLink
-                      to="/profile"
-                      className="menu__link menu__account-link"
-                    >
-                      Аккаунт
-                      <div className="menu__account-link_icon"></div>
-                    </NavLink>
-                  </>
-                }
-                menuModifier="header__menu_invisible"
-              />
+                      <NavLink
+                        to="/profile"
+                        className="menu__link menu__account-link"
+                      >
+                        Аккаунт
+                        <div className="menu__account-link_icon"></div>
+                      </NavLink>
+                    </>
+                  }
+                  menuModifier="header__menu_invisible"
+                />
+              </>
             ) : (
               <Navigation
                 children={
@@ -64,7 +68,10 @@ function Header({ loggedIn }) {
           <div className="header__content">
             <Logo />
             <Icon iconClass="header__menu-btn" />
-            <MenuMobile isOpenedClass="menu-mobile_opened" />
+            <MenuMobile
+              isOpenedClass="menu-mobile_opened"
+              loggedIn={loggedIn}
+            />
             <Navigation
               children={
                 <>
